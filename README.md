@@ -42,14 +42,14 @@ To run the application locally:
 1. Ensure you have Docker installed and running on your machine.
 2. Build the Docker image using:
 
-docker build -t data-ingestion-api
+``docker build -t data-ingestion-api``
 
 3. Start the services using Docker Compose:
 
-docker-compose up
+``docker-compose up``
 
 ## Tests
 
 Run the included tests locally using:
 
-```pytest``
+``pytest``
