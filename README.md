@@ -52,4 +52,4 @@ docker-compose up
 
 Run the included tests locally using:
 
-pytest
+```pytest``
