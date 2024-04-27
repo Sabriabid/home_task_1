@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 app = Flask(__name__)
 
-@app.route('/')  # Route racine
+@app.route('/') 
 def home():
     return "Welcome to the API!"
 
@@ -13,7 +13,7 @@ def home():
 def get_first_chunk():
     logging.info("Fetching the first chunk of data from the database.")
     try:
-        conn = sqlite3.connect("my_database.db")  # Assurez-vous que ce chemin correspond à celui utilisé dans etl.py
+        conn = sqlite3.connect("my_database.db")
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM data LIMIT 10")
         results = cursor.fetchall()

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Exécuter le script ETL
+# Run the ETL script
 python etl.py
 
-# Exécuter l'API après que le script ETL ait terminé
+# Run the API after the ETL script has finished
 python api.py

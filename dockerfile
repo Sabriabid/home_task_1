@@ -1,20 +1,20 @@
-# Définir l'image de base
+# Set base image
 FROM python:3.9-slim
 
-# Définir le répertoire de travail
+# Define working directory
 WORKDIR /app
 
-# Copier les fichiers de dépendances et installer les dépendances
+# Copy dependency files and install dependencies
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copier tous les autres fichiers du projet dans le conteneur
+# Copy all other project files into the container
 COPY . .
 RUN chmod +x start.sh  # Assurez-vous que le script est exécutable
-# Exposer le port utilisé par l'API
+# Expose the port used by the API
 EXPOSE 5000
 
-# Commande pour démarrer l'application (modifiez cela selon vos besoins)
+# Command to start the application
 CMD ["./start.sh"]
 
 

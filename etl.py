@@ -9,7 +9,7 @@ def load_data(file_path):
         logging.info("Loading data from file: %s", file_path)
         df = pd.read_csv(file_path)
         print("Données chargées avec succès :")
-        print(df.head())  # Affiche les premières lignes pour vérifier le contenu
+        print(df.head())  # Display first lines to check content
         return df
     except Exception as e:
         print("Erreur lors du chargement des données :", e)
@@ -36,7 +36,7 @@ def insert_into_db(df, db_path="my_database.db"):
         print("Aucune donnée à insérer dans la base de données.")
         return
     try:
-        ensure_table_exists(db_path)  # S'assurer que la table existe
+        ensure_table_exists(db_path)  # Make sure the table exists
         conn = sqlite3.connect(db_path)
         df.to_sql('data', conn, if_exists='replace', index=False)
         print(f"Données insérées dans {db_path} dans la table 'data'")
